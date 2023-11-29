@@ -9,9 +9,8 @@ def index(request):
 
 def job_listing(request):
     ofertas = Ofertas.objects.all()
-    return render(request, 'mainapp/job_listing.html',{
-        'title': 'Ofertas'},{
-        'ofertas': ofertas
+    print(request)
+    return render(request, 'mainapp/job_listing.html',{'title': 'Ofertas', 'ofertas': ofertas
     })
 
 def job_details(request):
@@ -24,10 +23,10 @@ def applications(request):
         'title': 'Aplicaciones'
     })
 
-def job_listing(request):
-    return render(request, 'mainapp/job_listing.html',{
-        'title': 'Pendiente'
-    })
+# def job_listing(request):
+#     return render(request, 'mainapp/job_listing.html',{
+#         'title': 'Pendiente'
+#     })
 
 def contact(request):
     return render(request, 'mainapp/contact.html',{
