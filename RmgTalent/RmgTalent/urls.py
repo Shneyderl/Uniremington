@@ -20,14 +20,16 @@ from django.urls import path, include
 from django.conf import settings
 from MainApp import views
 
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('index', views.index),
     path('index.html', views.index),
     path('', views.index),
     #    Ofertas
-    path('job_listing', views.job_listing),
-    path('job_listing.html', views.job_listing),
+    path('Ofertas/',include('DtaOfertas.urls')),
+        #path('job_listing', views.job_listing),
+        #path('job_listing.html', views.job_listing),
     #    Ofertas/Detalles
     path('job_details', views.job_details),
     path('job_details.html', views.job_details),
