@@ -36,16 +36,16 @@ def add_offer (request):
         # messages.success(request, 'Registrado correctamente')
         # return redirect('/')
         
-    return render(request, 'add_offer.html',{
+    return render(request, 'ofertas/add_offer.html',{
         'title': 'Crear Oferta',
     })
 
 def job_details(request):
-    return render(request, 'job_details.html',{
+    return render(request, 'ofertas/job_details.html',{
         'title': 'Detalle Oferta'
     })
 
 def job_listing(request):
-    return render(request, 'job_listing.html',{
+    return render(request, 'ofertas/job_listing.html',{
         'title': 'Listado de Ofertas'
     })

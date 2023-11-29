@@ -13,6 +13,7 @@ urlpatterns = [
     
     #    Ofertas/Administración
     path('add_offer',views.add_offer, name='add_offer'),
+    path('add_offer.html',views.add_offer, name='add_offer'),
     #path('ofertas',views.ver_ofertas, name='ver_ofertas'),
     # path('ver/<int:pk>',views.editar, name='ver_recolector'),
     # path('eliminar/<int:pk>',views.eliminar, name='eliminar_recolector'),
