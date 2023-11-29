@@ -36,7 +36,7 @@ def add_offer (request):
         # messages.success(request, 'Registrado correctamente')
         # return redirect('/')
         
-    return render(request, 'ofertas/add.html',{
+    return render(request, 'ofertas/add_offer.html',{
         'title': 'Crear Oferta',
     })
 

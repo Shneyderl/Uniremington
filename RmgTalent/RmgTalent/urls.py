@@ -15,19 +15,22 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-#from django.urls import path
 from django.urls import path, include
 from django.conf import settings
 from MainApp import views
 
 
 urlpatterns = [
-    path('', views.index),
-    path('admin/', admin.site.urls),
-    path('index', views.index),
-    path('index.html', views.index),
-        #    Ofertas
-    path('Ofertas/',include('DtaOfertas.urls')),
+    path('admin/', admin.site.urls),    
+    path (' ', include('MainApp.urls')),
+    path (' ', include('DtaOfertas.urls')),
+    
+    #path('', views.index),
+    #path('index', views.index),
+    #path('index.html', views.index),
+    
+    #    Ofertas
+    #path('Ofertas/',include('DtaOfertas.urls')),
     #path('job_listing', views.job_listing),
     #path('job_listing.html', views.job_listing),
     
@@ -42,25 +45,12 @@ urlpatterns = [
     #    Ofertas/Perfil
     # path('index', views.index),
     # path('index.html', views.index),
-    
-    #    Contactenos
-    path('contact', views.contact),
-    path('contact.html', views.contact),
-    
-    #    Acerca
-    path('about', views.about),
-    path('about.html', views.about),
-    
-    #    Registro
-    path('register', views.register),
-    path('register.html', views.register),
-    
-    #    Ingreso
-    path('login', views.login),
-    path('login.html', views.login),
 ]
 
 #ruta de imagenes
 if settings.DEBUG:
     from django.conf.urls.static import static
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+
+
+    
