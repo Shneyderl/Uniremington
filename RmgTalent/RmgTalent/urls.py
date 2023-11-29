@@ -17,26 +17,12 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from django.conf import settings
-from MainApp import views
-
 
 urlpatterns = [
     path('admin/', admin.site.urls),    
-    path (' ', include('MainApp.urls')),
-    path (' ', include('DtaOfertas.urls')),
-    path (' ', include('DtaAplicaciones.urls')),
-    
-    #path('', views.index),
-    #path('index', views.index),
-    #path('index.html', views.index),
-    
-    #    Pagína/Aplicaciones    
-    path('applications', views.applications),
-    path('applications.html', views.applications),
-    
-    #    Ofertas/Perfil
-    # path('index', views.index),
-    # path('index.html', views.index),
+    path ('', include('MainApp.urls')),
+    path ('', include('DtaOfertas.urls')),
+    path ('', include('DtaAplicaciones.urls')),        
 ]
 
 #ruta de imagenes
