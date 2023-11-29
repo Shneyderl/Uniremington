@@ -22,32 +22,39 @@ from MainApp import views
 
 
 urlpatterns = [
+    path('', views.index),
     path('admin/', admin.site.urls),
     path('index', views.index),
     path('index.html', views.index),
-    path('', views.index),
-    #    Ofertas
+        #    Ofertas
     path('Ofertas/',include('DtaOfertas.urls')),
-        #path('job_listing', views.job_listing),
-        #path('job_listing.html', views.job_listing),
+    #path('job_listing', views.job_listing),
+    #path('job_listing.html', views.job_listing),
+    
     #    Ofertas/Detalles
     path('job_details', views.job_details),
     path('job_details.html', views.job_details),
+    
     #    Pagína/Aplicaciones    
     path('applications', views.applications),
     path('applications.html', views.applications),
+    
     #    Ofertas/Perfil
     # path('index', views.index),
     # path('index.html', views.index),
+    
     #    Contactenos
     path('contact', views.contact),
     path('contact.html', views.contact),
+    
     #    Acerca
     path('about', views.about),
     path('about.html', views.about),
+    
     #    Registro
     path('register', views.register),
     path('register.html', views.register),
+    
     #    Ingreso
     path('login', views.login),
     path('login.html', views.login),
