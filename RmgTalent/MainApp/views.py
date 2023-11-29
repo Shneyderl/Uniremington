@@ -14,21 +14,6 @@ def index(request):
 #         #'ofertas': ofertas
 #     })
 
-def job_details(request):
-    return render(request, 'mainapp/job_details.html',{
-        'title': 'Oferta'
-    })
-
-def applications(request):
-    return render(request, 'mainapp/applications.html',{
-        'title': 'Aplicaciones'
-    })
-
-def job_listing(request):
-    return render(request, 'mainapp/job_listing.html',{
-        'title': 'Pendiente'
-    })
-
 def contact(request):
     return render(request, 'mainapp/contact.html',{
         'title': 'Contactanos'

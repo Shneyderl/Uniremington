@@ -24,19 +24,11 @@ urlpatterns = [
     path('admin/', admin.site.urls),    
     path (' ', include('MainApp.urls')),
     path (' ', include('DtaOfertas.urls')),
+    path (' ', include('DtaAplicaciones.urls')),
     
     #path('', views.index),
     #path('index', views.index),
     #path('index.html', views.index),
-    
-    #    Ofertas
-    #path('Ofertas/',include('DtaOfertas.urls')),
-    #path('job_listing', views.job_listing),
-    #path('job_listing.html', views.job_listing),
-    
-    #    Ofertas/Detalles
-    path('job_details', views.job_details),
-    path('job_details.html', views.job_details),
     
     #    Pagína/Aplicaciones    
     path('applications', views.applications),

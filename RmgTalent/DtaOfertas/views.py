@@ -40,11 +40,12 @@ def add_offer (request):
         'title': 'Crear Oferta',
     })
 
+def job_details(request):
+    return render(request, 'ofertas/job_details.html',{
+        'title': 'Detalle Oferta'
+    })
 
-def ver_ofertas(request):
-    ofertas = Ofertas.objects.all()
-    return render(request, 'mainapp/job_listing.html',{
-        'title': 'Ofertas'
-         },{
-        'ofertas': ofertas
+def job_listing(request):
+    return render(request, 'ofertas/job_listing.html',{
+        'title': 'Listado de Ofertas'
     })

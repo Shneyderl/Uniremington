@@ -2,6 +2,16 @@ from django.urls import path
 from . import views
 
 urlpatterns = [       
+    #    Ofertas
+    #path('Ofertas/', include('DtaOfertas.urls')),
+    path('job_listing', views.job_listing),
+    path('job_listing.html', views.job_listing),
+    
+    #    Ofertas/Detalles
+    path('job_details', views.job_details),
+    path('job_details.html', views.job_details),
+    
+    #    Ofertas/Administración
     path('add_offer',views.add_offer, name='add_offer'),
     #path('ofertas',views.ver_ofertas, name='ver_ofertas'),
     # path('ver/<int:pk>',views.editar, name='ver_recolector'),
