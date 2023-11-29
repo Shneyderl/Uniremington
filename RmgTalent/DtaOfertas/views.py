@@ -4,7 +4,7 @@ from .models import Ofertas
 # aqui se importan librerias de api de django
 from django.http import Http404
 
-from models import Ofertas
+#from models import Ofertas
 
 # Create your views here.
 
@@ -48,6 +48,7 @@ def job_details(request):
     })
 
 def job_listing(request):
-    return render(request, 'ofertas/job_listing.html',{
-        'title': 'Listado de Ofertas'
+    ofertas = Ofertas.objects.all()
+    print(request)
+    return render(request, 'ofertas/job_listing.html',{'title': 'Listado de Ofertas', 'ofertas': ofertas
     })
