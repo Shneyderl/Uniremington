@@ -4,8 +4,8 @@ from . import views
 urlpatterns = [       
     #    Ofertas
     #path('Ofertas/', include('DtaOfertas.urls')),
-    path('job_listing', views.job_listing),
-    path('job_listing.html', views.job_listing),
+    path('job_listing', views.job_listing, name='show_offer'),
+    path('job_listing.html', views.job_listing, name='show_offer'),
     
     #    Ofertas/Detalles
     path('job_details/<int:idOfer>/', views.job_details, name='job_details'),
