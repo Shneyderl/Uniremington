@@ -11,7 +11,7 @@
                 <div class="row">
                     <div class="col-xl-12">
                         <div class="hero-cap text-center">
-                            <h2>UI/UX Designer</h2>
+                            <h2>{{ oferta.titOfer }}</h2>
                         </div>
                     </div>
                 </div>
@@ -33,12 +33,12 @@
                                 </div>
                                 <div class="job-tittle">
                                     <a href="#">
-                                        <h4>Digital Marketer</h4>
+                                        <h4>{{ oferta.titOfer }}</h4>
                                     </a>
                                     <ul>
                                         <li>Creative Agency</li>
-                                        <li><i class="fas fa-map-marker-alt"></i>Athens, Greece</li>
-                                        <li>$3500 - $4000</li>
+                                        <li><i class="fas fa-map-marker-alt"></i>{{ oferta.ubcOfer }}</li>
+                                        <li>$ {{ oferta.salOfer }}</li>
                                     </ul>
                                 </div>
                             </div>
@@ -90,7 +90,7 @@
                                <h4>Job Overview</h4>
                            </div>
                           <ul>
-                              <li>Posted date : <span>12 Aug 2019</span></li>
+                              <li>Fecha de creacion : <span>{{ oferta.creaOfer }}</span></li>
                               <li>Location : <span>New York</span></li>
                               <li>Vacancy : <span>02</span></li>
                               <li>Job nature : <span>Full time</span></li>
