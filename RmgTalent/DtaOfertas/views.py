@@ -8,7 +8,6 @@ from .form import OfertaForm
 
 # Create your views here.
 
-# CRUD de django modelo por metodos tradicional
 def add_offer (request):
 
     form = OfertaForm()
@@ -17,27 +16,6 @@ def add_offer (request):
         print(form)
         if form.is_valid():
             form = OfertaForm(request.POST)
-            # idEmpOfer=request.POST.get('idEmpOfer')
-            # titOfer=request.POST.get('titOfer')
-            # cargoOfer=request.POST.get('cargoOfer')
-            # descOfer=request.POST.get('descOfer')
-            # skillOfer=request.POST.get('skillOfer')
-            # salOfer=request.POST.get('salOfer')
-            # contOfer=request.POST.get('contOfer')
-            # ubcOfer=request.POST.get('ubcOfer')
-            # catOfer=request.POST.get('catOfer')        
-        
-            # addOferta=Ofertas.objects.create(
-            #     idEmpOfer=idEmpOfer,
-            #     titOfer=titOfer,
-            #     cargoOfer=cargoOfer,
-            #     descOfer=descOfer,
-            #     skillOfer=skillOfer,
-            #     salOfer=salOfer,
-            #     contOfer=contOfer,
-            #     ubcOfer=ubcOfer,
-            #     catOfer=catOfer 
-            # )
             form.save()
         
         # messages.success(request, 'Registrado correctamente')

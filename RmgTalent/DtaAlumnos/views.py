@@ -12,30 +12,9 @@ def add_alumno (request):
     form = AlumnoForm()
     if request.method == 'POST':
         form = AlumnoForm(request.POST)
-        print(form)
+        #print(form)
         if form.is_valid():
             form = AlumnoForm(request.POST)
-            # idEmpOfer=request.POST.get('idEmpOfer')
-            # titOfer=request.POST.get('titOfer')
-            # cargoOfer=request.POST.get('cargoOfer')
-            # descOfer=request.POST.get('descOfer')
-            # skillOfer=request.POST.get('skillOfer')
-            # salOfer=request.POST.get('salOfer')
-            # contOfer=request.POST.get('contOfer')
-            # ubcOfer=request.POST.get('ubcOfer')
-            # catOfer=request.POST.get('catOfer')        
-        
-            # addOferta=Ofertas.objects.create(
-            #     idEmpOfer=idEmpOfer,
-            #     titOfer=titOfer,
-            #     cargoOfer=cargoOfer,
-            #     descOfer=descOfer,
-            #     skillOfer=skillOfer,
-            #     salOfer=salOfer,
-            #     contOfer=contOfer,
-            #     ubcOfer=ubcOfer,
-            #     catOfer=catOfer 
-            # )
             form.save()
         
         # messages.success(request, 'Registrado correctamente')
