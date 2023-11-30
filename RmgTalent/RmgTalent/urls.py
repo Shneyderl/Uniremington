@@ -22,7 +22,8 @@ urlpatterns = [
     path('admin/', admin.site.urls),    
     path ('', include('MainApp.urls')),
     path ('', include('DtaOfertas.urls')),
-    path ('', include('DtaAplicaciones.urls')),        
+    path ('', include('DtaAplicaciones.urls')), 
+    path ('', include('DtaAlumnos.urls')),        
 ]
 
 #ruta de imagenes
