@@ -24,13 +24,13 @@ def add_offer (request):
     return render(request, 'ofertas/add_offer.html',{'title': 'Crear Oferta','ofertas/add_offer.html': form,
     })
 
-def job_details(request):
-    return render(request, 'ofertas/job_details.html',{
-        'title': 'Detalle Oferta'
+def job_details(request, idOfer):
+    oferta = Ofertas.objects.get(idOfer=idOfer)
+    print(oferta)
+    return render(request, 'ofertas/job_details.html',{'title': 'Detalle Oferta', 'oferta': oferta
     })
 
 def job_listing(request):
     ofertas = Ofertas.objects.all()
-    print(request)
     return render(request, 'ofertas/job_listing.html',{'title': 'Listado de Ofertas', 'ofertas': ofertas
     })
