@@ -23,7 +23,7 @@ urlpatterns = [
     path ('', include('MainApp.urls')),
     path ('', include('DtaOfertas.urls')),
     path ('', include('DtaAplicaciones.urls')), 
-    path ('', include('DtaAlumnos.urls')),        
+    path ('', include('DtaAlumnos.urls')),
 ]
 
 #ruta de imagenes

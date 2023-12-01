@@ -11,7 +11,7 @@
                 <div class="row">
                     <div class="col-xl-12">
                         <div class="hero-cap text-center">
-                            <h2>{{ oferta.titOfer }}</h2>
+                            <h2>{{ alumnos.nomAlu }} {{ alumnos.apeAlu }}</h2>
                         </div>
                     </div>
                 </div>
@@ -29,64 +29,55 @@
                         <div class="single-job-items mb-50">
                             <div class="job-items">
                                 <div class="company-img company-img-details">
-                                    <a href="#"><img src="{% static 'assets/img/icon/job-list1.png' %}" alt=""></a>
+                                     <a href="#"><img src="{% static 'assets/img/icon/iconuser.png' %}" alt=""></a>                                     
                                 </div>
                                 <div class="job-tittle">
                                     <a href="#">
-                                        <h4>{{ oferta.titOfer }}</h4>
+                                        <h4>{{ alumnos.nomAlu }} {{ alumnos.apeAlu }}</h4>
                                     </a>
                                     <ul>
-                                        <li>{{ oferta.cargoOfer }}</li>
-                                        <li><i class="fas fa-map-marker-alt"></i>{{ oferta.ubcOfer }}</li>
-                                        <li>$ {{ oferta.salOfer }}</li>
+                                        <li>Facultad : {{ alumnos.carAlu }}</li>
+                                        <li>Semestre : {{ alumnos.semAlu }}</li>
+                                        <li>Doc : {{ alumnos.idAlu }}</li>
                                     </ul>
                                 </div>
                             </div>
                         </div>
-                          <!-- job single End -->
-                       
-                        <div class="job-post-details">
-                            <div class="post-details1 mb-50">
-                                <!-- Small Section Tittle -->
-                                <div class="small-section-tittle">
-                                    <h4>Descripción del cargo</h4>
-                                </div>
-                                <p>{{ oferta.descOfer }}.</p>
-                            </div>
-                            <div class="post-details2  mb-50">
-                                 <!-- Small Section Tittle -->
-                                <div class="small-section-tittle">
-                                    <h4>Requerimientos del cargo (Skills, Habilidades y demás)</h4>
-                                </div>
-                               <ul>
-                                   <li> {{ oferta.skillOfer }}. </li>
-                               </ul>
-                            </div>
-                            <div class="post-details2  mb-50">
-                            </div>
+                          <!-- job single End -->                        
                         </div>
-
+                                              
                     </div>
                     <!-- Right Content -->
                     <div class="col-xl-4 col-lg-4">
                         <div class="post-details3  mb-50">
                             <!-- Small Section Tittle -->
                            <div class="small-section-tittle">
-                               <h4>Job Overview</h4>
+                               <h4>Datos de Usuario</h4>
                            </div>
-                          <ul>
-                              <li>Fecha de creacion : <span>{{ oferta.creaOfer }}</span></li>
-                              <li>Ubicación : <span>{{ oferta.ubcOfer }}</span></li>
-                              <li>Contrato : <span>{{ oferta.contOfer }}</span></li>
-                              <li>Salario :  <span>${{ oferta.salOfer }}</span></li>
-                              <li>Fecha de Act. : <span>{{ oferta.actuOfer }}</span></li>
+                          <ul>                              
+                              <li>Usuario : <span>{{ usuarios.telUsr }}</span></li>
+                              <li>Dirección : <i class="fas fa-map-marker-alt"></i><span>{{ usuarios.dirUsr }}</span></li>
+                              <li>Telefono : <span>{{ usuarios.telUsr }}</span></li>
+                              <li>Fecha Nac. : <span>{{ usuarios.fnacUsr }}</span></li>
+                              <li>Fecha de Crea.. : <span>{{ usuarios.creaUsr }}</span></li>
                           </ul>
                          <div class="apply-btn2">
-                            <a href="{% url 'applications' oferta.idOfer %}" class="btn">Aplicar</a>
+                            <a href="#" class="btn">Aplicar</a>
                          </div>
                        </div>
                         <div class="post-details4  mb-50">
                             <!-- Small Section Tittle -->
+                            <!--
+                           <div class="small-section-tittle">
+                               <h4>Company Information</h4>
+                           </div>
+                              <span>Colorlib</span>
+                              <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</p>
+                            <ul>
+                                <li>Name: <span>Colorlib </span></li>
+                                <li>Web : <span> colorlib.com</span></li>
+                                <li>Email: <span>carrier.colorlib@gmail.com</span></li>
+                            </ul>     -->
                        </div>
                     </div>
                 </div>
