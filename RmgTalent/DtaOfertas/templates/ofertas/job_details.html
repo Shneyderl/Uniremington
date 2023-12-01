@@ -11,7 +11,7 @@
                 <div class="row">
                     <div class="col-xl-12">
                         <div class="hero-cap text-center">
-                            <h2>UI/UX Designer</h2>
+                            <h2>{{ oferta.titOfer }}</h2>
                         </div>
                     </div>
                 </div>
@@ -33,12 +33,12 @@
                                 </div>
                                 <div class="job-tittle">
                                     <a href="#">
-                                        <h4>Digital Marketer</h4>
+                                        <h4>{{ oferta.titOfer }}</h4>
                                     </a>
                                     <ul>
-                                        <li>Creative Agency</li>
-                                        <li><i class="fas fa-map-marker-alt"></i>Athens, Greece</li>
-                                        <li>$3500 - $4000</li>
+                                        <li>{{ oferta.cargoOfer }}</li>
+                                        <li><i class="fas fa-map-marker-alt"></i>{{ oferta.ubcOfer }}</li>
+                                        <li>$ {{ oferta.salOfer }}</li>
                                     </ul>
                                 </div>
                             </div>
@@ -49,25 +49,26 @@
                             <div class="post-details1 mb-50">
                                 <!-- Small Section Tittle -->
                                 <div class="small-section-tittle">
-                                    <h4>Job Description</h4>
+                                    <h4>Descripción del cargo</h4>
                                 </div>
-                                <p>It is a long established fact that a reader will beff distracted by vbthe creadable content of a page when looking at its layout. The pointf of using Lorem Ipsum is that it has ahf mcore or-lgess normal distribution of letters, as opposed to using, Content here content here making it look like readable.</p>
+                                <p>{{ oferta.descOfer }}.</p>
                             </div>
                             <div class="post-details2  mb-50">
                                  <!-- Small Section Tittle -->
                                 <div class="small-section-tittle">
-                                    <h4>Required Knowledge, Skills, and Abilities</h4>
+                                    <h4>Requerimientos del cargo (Skills, Habilidades y demás)</h4>
                                 </div>
                                <ul>
-                                   <li>System Software Development</li>
-                                   <li>Mobile Applicationin iOS/Android/Tizen or other platform</li>
+                                   <li> {{ oferta.skillOfer }}. </li>
+                                   <!--<<li>Mobile Applicationin iOS/Android/Tizen or other platform</li>
                                    <li>Research and code , libraries, APIs and frameworks</li>
                                    <li>Strong knowledge on software development life cycle</li>
-                                   <li>Strong problem solving and debugging skills</li>
+                                   <li>Strong problem solving and debugging skills</li>>        -->
                                </ul>
                             </div>
                             <div class="post-details2  mb-50">
                                  <!-- Small Section Tittle -->
+                                 <!-- 
                                 <div class="small-section-tittle">
                                     <h4>Education + Experience</h4>
                                 </div>
@@ -77,7 +78,7 @@
                                    <li>Ecommerce website design experience</li>
                                    <li>Familiarity with mobile and web apps preferred</li>
                                    <li>Experience using Invision a plus</li>
-                               </ul>
+                               </ul>  -->
                             </div>
                         </div>
 
@@ -90,19 +91,19 @@
                                <h4>Job Overview</h4>
                            </div>
                           <ul>
-                              <li>Posted date : <span>12 Aug 2019</span></li>
-                              <li>Location : <span>New York</span></li>
-                              <li>Vacancy : <span>02</span></li>
-                              <li>Job nature : <span>Full time</span></li>
-                              <li>Salary :  <span>$7,800 yearly</span></li>
-                              <li>Application date : <span>12 Sep 2020</span></li>
+                              <li>Fecha de creacion : <span>{{ oferta.creaOfer }}</span></li>
+                              <li>Ubicación : <span>{{ oferta.ubcOfer }}</span></li>
+                              <li>Contrato : <span>{{ oferta.contOfer }}</span></li>
+                              <li>Salario :  <span>${{ oferta.salOfer }}</span></li>
+                              <li>Fecha de Act. : <span>{{ oferta.actuOfer }}</span></li>
                           </ul>
                          <div class="apply-btn2">
-                            <a href="#" class="btn">Apply Now</a>
+                            <a href="#" class="btn">Aplicar</a>
                          </div>
                        </div>
                         <div class="post-details4  mb-50">
                             <!-- Small Section Tittle -->
+                            <!--
                            <div class="small-section-tittle">
                                <h4>Company Information</h4>
                            </div>
@@ -112,7 +113,7 @@
                                 <li>Name: <span>Colorlib </span></li>
                                 <li>Web : <span> colorlib.com</span></li>
                                 <li>Email: <span>carrier.colorlib@gmail.com</span></li>
-                            </ul>
+                            </ul>     -->
                        </div>
                     </div>
                 </div>

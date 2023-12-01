@@ -1,5 +1,4 @@
 from django.shortcuts import render
-from DtaOfertas.models import Ofertas
 
 # Create your views here.
 def index(request):
@@ -7,25 +6,12 @@ def index(request):
         'title': 'Inicio'
     })
 
-def job_listing(request):
-    ofertas = Ofertas.objects.all()
-    print(request)
-    return render(request, 'mainapp/job_listing.html',{'title': 'Ofertas', 'ofertas': ofertas
-    })
-
-def job_details(request):
-    return render(request, 'mainapp/job_details.html',{
-        'title': 'Oferta'
-    })
-
-def applications(request):
-    return render(request, 'mainapp/applications.html',{
-        'title': 'Aplicaciones'
-    })
-
 # def job_listing(request):
+#     #ofertas = Ofertas.objects.all()
 #     return render(request, 'mainapp/job_listing.html',{
-#         'title': 'Pendiente'
+#         'title': 'Ofertas'
+#         # },{
+#         #'ofertas': ofertas
 #     })
 
 def contact(request):
