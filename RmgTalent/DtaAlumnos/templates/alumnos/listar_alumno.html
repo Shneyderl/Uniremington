@@ -12,7 +12,7 @@
                     <div class="row">
                         <div class="col-xl-12">
                             <div class="hero-cap text-center">
-                                <h2>Alumnos</h2>
+                                <h2>Alumnos registrados</h2>
                             </div>
                         </div>
                     </div>
@@ -37,7 +37,7 @@
                                         d="M7.778,12.000 L12.222,12.000 L12.222,10.000 L7.778,10.000 L7.778,12.000 ZM-0.000,-0.000 L-0.000,2.000 L20.000,2.000 L20.000,-0.000 L-0.000,-0.000 ZM3.333,7.000 L16.667,7.000 L16.667,5.000 L3.333,5.000 L3.333,7.000 Z"/>
                                     </svg>
                                     </div>
-                                    <h4>Filtrar Alumno</h4>
+                                    <h4>Filtrar Alumnos</h4>
                                 </div>
                             </div>
                         </div>
@@ -116,7 +116,7 @@
                                             <a href="#"><img src="{% static 'assets/img/icon/IconUser.png' %}" alt=""></a>
                                         </div>
                                         <div class="job-tittle job-tittle2">
-                                            <a href="#">
+                                            <a href="{% url 'detail_alumno' alumno.idAlu %}">
                                                 <h4>{{ alumno.nomAlu }} {{ alumno.apeAlu}}</h4>
                                             </a>
                                             <ul>
@@ -126,7 +126,7 @@
                                         </div>
                                     </div>
                                     <div class="items-link items-link2 f-right">
-                                        <a href="job_details.html">Ver</a>
+                                        <!--               Aquí va el paso por referencia       -->
                                     </div>
                                 </div>
                                 {% endfor %}

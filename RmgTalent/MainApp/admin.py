@@ -10,9 +10,9 @@ class TipoDocumentoAdmin(admin.ModelAdmin):
     #ordering=('-creaDoc')
 
 class UserAdmin(admin.ModelAdmin):
-    list_display = ('usuario','idUsr', 'dirUsr', 'fnacUsr', 'telUsr', 'creaUsr', 'actuUsr')
-    #readonly_fields =('creaUsr', 'actuUsr')
-    #search_fields=('idUsr', 'dirUsr', 'telUsr')
+    list_display = ('usuario','idUsr', 'dirUsr', 'fnacUsr', 'telUsr', 'picUsr', 'creaUsr', 'actuUsr')
+    readonly_fields =('creaUsr', 'actuUsr')
+    search_fields=('idUsr', 'dirUsr', 'telUsr')
     #ordering=('-creaUsr')
  
 admin.site.register(TipoDoc, TipoDocumentoAdmin)
