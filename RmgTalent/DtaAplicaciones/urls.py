@@ -3,6 +3,6 @@ from . import views
 
 urlpatterns = [
     #    Pagína/Aplicaciones    
-    path('applications', views.applications),
-    path('applications.html', views.applications),
+    path('Post_List', views.applications),
+    path('Post_List.html', views.applications),
 ]

@@ -8,6 +8,6 @@ from django.http import Http404
 
 # CRUD de django modelo por metodos tradicional
 def applications(request):
-    return render(request, 'applies/applications.html',{
-        'title': 'Aplicaciones'
+    return render(request, 'applies/Post_List.html',{
+        'title': 'Postulaciones'
     })
