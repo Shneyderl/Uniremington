@@ -13,6 +13,10 @@ from .forms import ValidarNumeroForm
 # Create your views here.
 
 # CRUD de django modelo por metodos tradicional
+def applications(request):
+    return render(request, 'applies/Post_List.html',{
+        'title': 'Postulaciones'
+    })
 def applications(request, idOfer):
     oferta = Ofertas.objects.get(idOfer=idOfer)
     empresa = Empresas.objects.get(idEmp=oferta.idEmpOfer)
