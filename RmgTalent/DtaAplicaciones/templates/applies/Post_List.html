@@ -1,0 +1,147 @@
+{% extends 'layouts/layout.html' %}
+
+{% block content %}
+{% load static %}
+<!-- Inicio de Bloque-->
+
+
+        <!-- Hero Area Start-->
+        <div class="slider-area ">
+        <div class="single-slider section-overly slider-height2 d-flex align-items-center" data-background="{% static 'assets/img/hero/app.jpg' %}">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-12">
+                        <div class="hero-cap text-center">
+                            <h2>Listado de postulaciones</h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+        <!-- Hero Area End -->
+        <!-- job post company Start -->
+        <div class="job-post-company pt-120 pb-120">
+            <div class="container">
+                <div class="row justify-content-between">
+                    <!-- Left Content -->
+                    <div class="col-xl-7 col-lg-8">
+                        <!-- job single -->
+                        <div class="single-job-items mb-50">
+                            <div class="job-items">
+                                <div class="job-tittle">
+                                    <a href="#">
+                                        <h4>Postulaciones por oferta</h4>
+                                    </a>
+                                    <ul>
+                                        <!--  inicio de tabla de postulaciones -->
+                                        <table class="table table-striped">
+                                            <thead>
+                                                <tr>
+                                                  <th scope="col">Cod.Oferta</th>
+                                                  <th scope="col">Nombre Oferta</th>
+                                                  <th scope="col">Cantidad de Postulaciones</th>
+                                                  <th scope="col">Postulados</th>
+                                                </tr>
+                                              </thead>
+                                                    <tbody>
+                                                        <!-- {% for alumno in alumnos %} -->
+                                                        <tr class="table-light">
+                                                        <th scope="row">1</th>
+                                                        <td>Mark</td>
+                                                        <td>Otto</td>
+                                                        <td>@mdo</td>
+                                                        </tr>
+                                                        <!-- {% endfor %} -->
+                                                        <!-- Para llenar tabla temporalmente -->
+                                                        <tr>
+                                                            <th scope="row">1</th>
+                                                            <td>Mark</td>
+                                                            <td>Otto</td>
+                                                            <td>@mdo</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th scope="row">1</th>
+                                                            <td>Mark</td>
+                                                            <td>Otto</td>
+                                                            <td>@mdo</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th scope="row">1</th>
+                                                            <td>Mark</td>
+                                                            <td>Otto</td>
+                                                            <td>@mdo</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th scope="row">1</th>
+                                                            <td>Mark</td>
+                                                            <td>Otto</td>
+                                                            <td>@mdo</td>
+                                                        </tr>
+                                                        <!-- Fin Para llenar tabla temporalmente -->
+                                                    </tbody>
+                                        </table>
+
+                                        <!--  Fin de tabla de postulaciones -->
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                          <!-- job single End -->
+                       
+                        <div class="job-post-details">
+                            <div class="post-details1 mb-50">
+                                <!-- Small Section Tittle -->
+                                <div class="small-section-tittle">
+                                    <h4>Postulaciones</h4>
+                                </div>
+                                <p>Este es el resumen de las postulaciones activas a la fecha, donde aparece la cantidad de alumnos que han aplicado y el detalle de cuales serían los candidatos, con esto esperamos llevar un control y registro del progreso de nuestras actividades y de sus opciones laborales..</p>
+                            </div>
+                            <div class="post-details2  mb-50">
+                                 <!-- Small Section Tittle -->
+                               
+                            </div>
+                            
+                        </div>
+
+                    </div>
+                    <!-- Right Content -->
+                    <div class="col-xl-4 col-lg-4">
+                        <div class="post-details3  mb-50">
+                            <!-- Small Section Tittle -->
+                           <div class="small-section-tittle">
+                               <h4>Datos generales</h4>
+                           </div>
+                          <ul>
+                              <li>Fecha de registro : <span>2 diciembre de 2023</span></li>
+                              <li>Ubicación : <span>Cali, Valle</span></li>
+                              <li>Cantidad : <span>{{ oferta.count }}</span></li>
+                              <li>Tipo de oferta : <span>Tiempo completo</span></li>                              
+                              <li>Fecha de cierre : <span>12 Sep 2020</span></li>
+                          </ul>
+                         <div class="apply-btn2">
+                            <a href="#" class="btn"> Regresar</a>
+                         </div>
+                       </div>
+                        <div class="post-details4  mb-50">
+                            <!-- Small Section Tittle -->
+                           <div class="small-section-tittle">
+                               <h4>Company Information</h4>
+                           </div>
+                              <span>Colorlib</span>
+                              <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</p>
+                            <ul>
+                                <li>Name: <span>Colorlib </span></li>
+                                <li>Web : <span> colorlib.com</span></li>
+                                <li>Email: <span>carrier.colorlib@gmail.com</span></li>
+                            </ul>
+                       </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- job post company End -->
+
+
+<!-- Cierre de Bloque-->
+{% endblock %}

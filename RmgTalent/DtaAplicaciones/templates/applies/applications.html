@@ -12,7 +12,7 @@
                 <div class="row">
                     <div class="col-xl-12">
                         <div class="hero-cap text-center">
-                            <h2>UI/UX Designer</h2>
+                            <h2>Aplicaciones a vacantes</h2>
                         </div>
                     </div>
                 </div>
@@ -34,12 +34,12 @@
                                 </div>
                                 <div class="job-tittle">
                                     <a href="#">
-                                        <h4>Digital Marketer</h4>
+                                        <h4>{{ oferta.titOfer }}</h4>
                                     </a>
                                     <ul>
-                                        <li>Creative Agency</li>
-                                        <li><i class="fas fa-map-marker-alt"></i>Athens, Greece</li>
-                                        <li>$3500 - $4000</li>
+                                        <li>{{ oferta.idEmpOfer }}</li>
+                                        <li><i class="fas fa-map-marker-alt"></i>{{ oferta.ubcOfer }}</li>
+                                        <li>$ {{ oferta.salOfer }}</li>
                                     </ul>
                                 </div>
                             </div>
@@ -50,34 +50,27 @@
                             <div class="post-details1 mb-50">
                                 <!-- Small Section Tittle -->
                                 <div class="small-section-tittle">
-                                    <h4>Job Description</h4>
+                                    <h4>Descripcion de la oferta</h4>
                                 </div>
-                                <p>It is a long established fact that a reader will beff distracted by vbthe creadable content of a page when looking at its layout. The pointf of using Lorem Ipsum is that it has ahf mcore or-lgess normal distribution of letters, as opposed to using, Content here content here making it look like readable.</p>
+                                <p>{{ oferta.descOfer }}.</p>
                             </div>
                             <div class="post-details2  mb-50">
                                  <!-- Small Section Tittle -->
                                 <div class="small-section-tittle">
-                                    <h4>Required Knowledge, Skills, and Abilities</h4>
+                                    <h4>Requerimientos del cargo (Skills, Habilidades y demás)</h4>
                                 </div>
                                <ul>
-                                   <li>System Software Development</li>
-                                   <li>Mobile Applicationin iOS/Android/Tizen or other platform</li>
-                                   <li>Research and code , libraries, APIs and frameworks</li>
-                                   <li>Strong knowledge on software development life cycle</li>
-                                   <li>Strong problem solving and debugging skills</li>
+                                   <li>{{ oferta.skillOfer }}. </li>
                                </ul>
                             </div>
                             <div class="post-details2  mb-50">
                                  <!-- Small Section Tittle -->
                                 <div class="small-section-tittle">
-                                    <h4>Education + Experience</h4>
+                                    <h4>Detalles de la oferta</h4>
                                 </div>
                                <ul>
-                                   <li>3 or more years of professional design experience</li>
-                                   <li>Direct response email experience</li>
-                                   <li>Ecommerce website design experience</li>
-                                   <li>Familiarity with mobile and web apps preferred</li>
-                                   <li>Experience using Invision a plus</li>
+                                   <li>Cargo: {{ oferta.cargoOfer }}.</li>
+                                   <li>Tipo de contrato: {{ oferta.contOfer }}</li>
                                </ul>
                             </div>
                         </div>
@@ -91,28 +84,30 @@
                                <h4>Job Overview</h4>
                            </div>
                           <ul>
-                              <li>Posted date : <span>12 Aug 2019</span></li>
-                              <li>Location : <span>New York</span></li>
-                              <li>Vacancy : <span>02</span></li>
-                              <li>Job nature : <span>Full time</span></li>
-                              <li>Salary :  <span>$7,800 yearly</span></li>
-                              <li>Application date : <span>12 Sep 2020</span></li>
+                              <li>Fecha de publicacion : <span>{{ oferta.creaOfer }}</span></li>
+                              <li>Ubicacion : <span>{{ oferta.ubcOfer }}</span></li>
+                              <li>Contrato : <span>{{ oferta.contOfer }}</span></li>
+                              <li>Salario :  <span>{{ oferta.contOfer }}</span></li>
+                              <li>Fecha de aplicacion : <span> {{ current_time }}</span></li>
                           </ul>
                          <div class="apply-btn2">
-                            <a href="#" class="btn">Apply Now</a>
+                            <button type="button" class="btn" data-toggle="modal" data-target="#aplicaModal">Aplicar Ahora!!</button>
+                            <!-- <a href="#" class="btn">Aplica Ahora!!</a> -->
                          </div>
                        </div>
                         <div class="post-details4  mb-50">
                             <!-- Small Section Tittle -->
                            <div class="small-section-tittle">
-                               <h4>Company Information</h4>
+                               <h4>Informacion de la compañia</h4>
                            </div>
-                              <span>Colorlib</span>
-                              <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</p>
+                              <span>{{ empresa.nomEmp }}</span>
                             <ul>
-                                <li>Name: <span>Colorlib </span></li>
-                                <li>Web : <span> colorlib.com</span></li>
-                                <li>Email: <span>carrier.colorlib@gmail.com</span></li>
+                                <li>Nombre: <span>{{ empresa.nomEmp }} </span></li>
+                                <li>Sector : <span>{{ empresa.sectEmp }} </span></li>
+                                <li>Email: <span>{{ empresa.mailEmp }} </span></li>
+                                <li>Telefono: <span>{{ empresa.telEmp }} </span></li>
+                                <li>Direccion : <span>{{ empresa.dirEmp }} </span></li>
+                                <li>Nit: <span>{{ empresa.idEmp }} </span></li>
                             </ul>
                        </div>
                     </div>
@@ -123,4 +118,54 @@
 
 
 <!-- Cierre de Bloque-->
+<!-- Modal -->
+<div class="modal fade" id="aplicaModal" tabindex="-1" role="dialog" aria-labelledby="aplicaModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="aplicaModalLabel">Aplica Ahora!!!</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form id="addForm">
+                    {% csrf_token %}
+                    {{ form.as_p }}
+                    <div class="col-12">
+                        <div class="form-group">
+                            <input class="form-control" name="idAlu" id="idAlu" type="text" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Id de alumno'" placeholder="Id de alumno">
+                        </div>
+                    </div>
+                    <span id="errorNumero" style="color: red;"></span>
+                    <button type="submit" class="btn btn-primary" id="validarNumeroBtn">Aplicar</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(document).ready(function() {
+        $("#validarNumeroBtn").on("click", function() {
+            $.ajax({
+                url: "/validar_numero_alu/",  // Reemplaza con la URL correcta en tu aplicación Django
+                method: "POST",
+                data: $("#validarNumeroForm").serialize(),
+                success: function(data) {
+                    if (data.existe) {
+                        $("#errorNumero").text("");
+                        // Aquí puedes realizar acciones adicionales si el número es válido
+                        // Por ejemplo, agregar el registro en la base de datos
+                    } else {
+                        $("#errorNumero").text("El número no coincide con ningún alumno.");
+                    }
+                }
+            });
+        });
+    });
+</script>
+
 {% endblock %}
+
+
