@@ -121,7 +121,7 @@
 <!-- Modal -->
 <div class="modal fade" id="aplicaModal" tabindex="-1" role="dialog" aria-labelledby="aplicaModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
-        <div class="modal-content">
+        <div class="modal-content form_content">
             <div class="modal-header">
                 <h5 class="modal-title" id="aplicaModalLabel">Aplica Ahora!!!</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -129,7 +129,7 @@
                 </button>
             </div>
             <div class="modal-body">
-                <form id="addForm">
+                <form id="ValidarNumeroForm" method="post" novalidate="novalidate">
                     {% csrf_token %}
                     {{ form.as_p }}
                     <div class="col-12">
@@ -138,26 +138,32 @@
                         </div>
                     </div>
                     <span id="errorNumero" style="color: red;"></span>
-                    <button type="submit" class="btn btn-primary" id="validarNumeroBtn">Aplicar</button>
+                    <button type="button" class="btn btn-primary" id="ValidarNumeroBtn">Aplicar</button>
                 </form>
             </div>
         </div>
     </div>
 </div>
-
 <script>
+    var $ = jQuery.noConflict()
     $(document).ready(function() {
-        $("#validarNumeroBtn").on("click", function() {
+        $(".form_content").on("click", "#ValidarNumeroBtn", function() {
+            event.preventDefault();
+            var idAlu = $("#ValidarNumeroForm input[name='idAlu']").val();
+            var url = "{% url 'validar_numero_alu' oferta.idOfer 0 %}".replace('0', idAlu);
             $.ajax({
-                url: "/validar_numero_alu/",  // Reemplaza con la URL correcta en tu aplicación Django
+                url: url,
                 method: "POST",
-                data: $("#validarNumeroForm").serialize(),
+                data: $("#ValidarNumeroForm").serialize(),
                 success: function(data) {
                     if (data.existe) {
+                        console.log(data);
                         $("#errorNumero").text("");
+                        $("#ValidarNumeroForm")[0].submit();
                         // Aquí puedes realizar acciones adicionales si el número es válido
                         // Por ejemplo, agregar el registro en la base de datos
                     } else {
+                        console.log('ingreso existe falso');
                         $("#errorNumero").text("El número no coincide con ningún alumno.");
                     }
                 }
@@ -167,5 +173,12 @@
 </script>
 
 {% endblock %}
+
+
+
+
+
+
+
 
 
