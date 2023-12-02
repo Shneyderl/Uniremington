@@ -13,7 +13,7 @@ from .forms import ValidarNumeroForm
 # Create your views here.
 
 # CRUD de django modelo por metodos tradicional
-def applications(request):
+def postulacion(request):
     return render(request, 'applies/Post_List.html',{
         'title': 'Postulaciones'
     })
