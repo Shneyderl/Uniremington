@@ -24,16 +24,23 @@ def applications(request, idOfer):
     return render(request, 'applies/applications.html',{'title': 'Aplicaciones', 'oferta': oferta, 'current_time': current_time, 'empresa' : empresa 
     })
 
-def validar_numero_alu(request):
+def validar_numero_alu(request, idOfer, idAlu):
     if request.method == "POST":
         form = ValidarNumeroForm(request.POST)
-        print('ingresa')
-        if form.is_valid():
-            numero_alu = form.cleaned_data['numero_alu']
-            existe_alu = Alumnos.objects.filter(idAlu=numero_alu).exists()
-
-            # Devolver la respuesta JSON
-            return JsonResponse({"existe": existe_alu})
-
+        #print(form.is_valid())
+        #if form.is_valid():  Se valida en el formulario
+        #numero_alu = form.cleaned_data['numero_alu']
+        existe_alu = Alumnos.objects.filter(idAlu=idAlu).exists()
+        if existe_alu:
+                # Crear un nuevo registro en el modelo Aplica
+                Aplica.objects.create(
+                    idOferApp_id=idOfer,
+                    idAluApp_id=idAlu,
+                    stsApp="aplicando",
+                )
+        # Devolver la respuesta JSON
+                return JsonResponse({"existe": existe_alu})
+        else:
+                return JsonResponse({"existe": False})
     # Si hay un error o la solicitud no es POST, devolver una respuesta por defecto
     return JsonResponse({"existe": False})
