@@ -44,42 +44,63 @@
                                                   <th scope="col">Postulados</th>
                                                 </tr>
                                               </thead>
-                                                    <tbody>
-                                                        <!-- {% for alumno in alumnos %} -->
-                                                        <tr class="table-light">
-                                                        <th scope="row">1</th>
-                                                        <td>Mark</td>
-                                                        <td>Otto</td>
-                                                        <td>@mdo</td>
-                                                        </tr>
-                                                        <!-- {% endfor %} -->
-                                                        <!-- Para llenar tabla temporalmente -->
-                                                        <tr>
-                                                            <th scope="row">1</th>
-                                                            <td>Mark</td>
-                                                            <td>Otto</td>
-                                                            <td>@mdo</td>
-                                                        </tr>
-                                                        <tr>
-                                                            <th scope="row">1</th>
-                                                            <td>Mark</td>
-                                                            <td>Otto</td>
-                                                            <td>@mdo</td>
-                                                        </tr>
-                                                        <tr>
-                                                            <th scope="row">1</th>
-                                                            <td>Mark</td>
-                                                            <td>Otto</td>
-                                                            <td>@mdo</td>
-                                                        </tr>
-                                                        <tr>
-                                                            <th scope="row">1</th>
-                                                            <td>Mark</td>
-                                                            <td>Otto</td>
-                                                            <td>@mdo</td>
-                                                        </tr>
-                                                        <!-- Fin Para llenar tabla temporalmente -->
-                                                    </tbody>
+                                              <tbody>
+                                                {% for oferta_data in data_ofertas %}
+                                                    <tr class="table-light">
+                                                        <td>{{ oferta_data.idOfer }}</td>
+                                                        <td>{{ oferta_data.titOfer }}</td>
+                                                        <td>{{ oferta_data.cantidad_postulaciones }}</td>
+                                                        <td>
+                                                            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#alumnosModal_{{ oferta_data.idOfer }}">
+                                                                Ver
+                                                            </button>
+                                            
+                                                            <!-- Modal -->
+                                                            <div class="modal fade" id="alumnosModal_{{ oferta_data.idOfer }}" tabindex="-1" role="dialog" aria-labelledby="alumnosModalLabel" aria-hidden="true">
+                                                                <div class="modal-dialog" role="document">
+                                                                    <div class="modal-content">
+                                                                        <div class="modal-header">
+                                                                            <h5 class="modal-title" id="alumnosModalLabel">Alumnos Postulados</h5>
+                                                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                                                <span aria-hidden="true">&times;</span>
+                                                                            </button>
+                                                                        </div>
+                                                                        <div class="modal-body">
+                                                                            <table class="table table-striped">
+                                                                                <thead>
+                                                                                    <tr>
+                                                                                        <th scope="col">Id Alumno</th>
+                                                                                        <th scope="col">Nombre Alumno</th>
+                                                                                    </tr>
+                                                                                </thead>
+                                                                                <tbody>
+                                                                                    {% for alumno in oferta_data.alumnos_postulados %}
+                                                                                        <tr>
+                                                                                            <td>
+                                                                                                <a href="{% url 'detail_alumno' alumno.0 %}" class="text-dark" style="cursor: pointer;">
+                                                                                                    {{ alumno.0 }}
+                                                                                                </a>
+                                                                                            </td>
+                                                                                            <td>
+                                                                                                <a href="{% url 'detail_alumno' alumno.0 %}"  class="text-dark" style="cursor: pointer;">
+                                                                                                    {{ alumno.1 }}
+                                                                                                </a>
+                                                                                            </td>   
+                                                                                        </tr>
+                                                                                    {% endfor %}
+                                                                                </tbody>
+                                                                            </table>
+                                                                        </div>
+                                                                        <div class="modal-footer">
+                                                                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </td>
+                                                    </tr>
+                                                {% endfor %}
+                                            </tbody>
                                         </table>
 
                                         <!--  Fin de tabla de postulaciones -->
