@@ -9,5 +9,6 @@ urlpatterns = [
     path('Post_List.html', views.postulacion, name='postulacion'),
     path('applications/<int:idOfer>/', views.applications, name='applications'),
     path('applications.html/<int:idOfer>/', views.applications, name='applications'),
-    path('applications.html/<int:idAlu>/', validar_numero_alu, name='validar_numero_alu'),
+    path('validar_numero_alu/<int:idOfer>/<int:idAlu>/', views.validar_numero_alu, name='validar_numero_alu'),
+    #path('validar_numero_alu/<int:idOfer>/', views.validar_numero_alu, name='validar_numero_alu'),
 ]
