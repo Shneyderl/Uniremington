@@ -2,6 +2,7 @@ from django.urls import path
 from . import views
 from .views import validar_numero_alu
 from .views import postulacion
+from DtaAlumnos.views import detail_alumno
 
 urlpatterns = [
     #    Pagína/Aplicaciones    

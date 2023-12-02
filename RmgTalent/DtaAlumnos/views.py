@@ -31,9 +31,13 @@ def listar_alumno(request):
     })
 
 def detail_alumno(request, idAlu):
-    alumnos = Alumnos.objects.get(idAlu=idAlu)
-    usuarios = Usuarios.objects.get(idUsr=idAlu)
-    print(alumnos)
-    print(usuarios)
-    return render(request, 'alumnos/detail_alumno.html',{'title': 'Alumno', 'alumnos': alumnos, 'usuarios': usuarios
-    })
+    try:
+        alumnos = Alumnos.objects.get(idAlu=idAlu)
+        usuarios = Usuarios.objects.get(idUsr=idAlu)
+        return render(request, 'alumnos/detail_alumno.html', {'title': 'Alumno', 'alumnos': alumnos, 'usuarios': usuarios})
+    except Usuarios.DoesNotExist:
+        # Manejar el caso en que Usuarios no existe
+        return render(request, 'alumnos/detail_alumno.html', {'title': 'Alumno', 'alumnos': alumnos})
+    except Alumnos.DoesNotExist:
+        # Manejar el caso en que Alumnos no existe
+        return render(request, 'error_alumno_no_existe.html')
