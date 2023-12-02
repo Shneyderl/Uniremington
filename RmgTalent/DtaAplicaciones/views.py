@@ -13,10 +13,42 @@ from .forms import ValidarNumeroForm
 # Create your views here.
 
 # CRUD de django modelo por metodos tradicional
+# def postulacion(request):
+#     return render(request, 'applies/Post_List.html',{'title': 'Postulaciones'
+#     })
+
+from django.shortcuts import render
+from .models import Ofertas, Aplica, Alumnos
+
 def postulacion(request):
-    return render(request, 'applies/Post_List.html',{
-        'title': 'Postulaciones'
-    })
+    # Obtener todas las ofertas
+    ofertas = Ofertas.objects.all()
+
+    # Crear una lista para almacenar los datos de cada oferta
+    data_ofertas = []
+
+    # Iterar sobre las ofertas y obtener la información necesaria
+    for oferta in ofertas:
+        # Obtener la cantidad de postulaciones para la oferta actual
+        cantidad_postulaciones = Aplica.objects.filter(idOferApp=oferta.idOfer).count()
+
+        # Obtener la lista de alumnos que postularon a esta oferta
+        alumnos_postulados = Aplica.objects.filter(idOferApp=oferta.idOfer).values_list('idAluApp__idAlu', 'idAluApp__nomAlu')
+
+        # Crear un diccionario con la información de la oferta actual
+        oferta_data = {
+            'idOfer': oferta.idOfer,
+            'titOfer': oferta.titOfer,
+            'cantidad_postulaciones': cantidad_postulaciones,
+            'alumnos_postulados': list(alumnos_postulados),
+        }
+
+        # Agregar el diccionario a la lista
+        data_ofertas.append(oferta_data)
+
+    return render(request, 'applies/Post_List.html', {'title': 'Postulaciones', 'data_ofertas': data_ofertas})
+
+
 def applications(request, idOfer):
     oferta = Ofertas.objects.get(idOfer=idOfer)
     empresa = Empresas.objects.get(idEmp=oferta.idEmpOfer)
